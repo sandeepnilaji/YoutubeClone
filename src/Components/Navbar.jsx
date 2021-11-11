@@ -33,7 +33,7 @@ function Navbar(){
             placeholder="Search"
           />
   
-          <Link to={`/search/${inputSearch}`} className="header-input-icon">
+          <Link to={`/search`} className="header-input-icon">
             <SearchIcon className="search-icon" />
           </Link>
         </div>
