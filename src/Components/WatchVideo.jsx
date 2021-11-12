@@ -170,7 +170,7 @@ function WatchVideo() {
         {data.map((e) => (
           <div key={e.id}>
             <iframe
-              width="695"
+              width="100%"
               height="450"
               src={e.videoSrc}
               title="YouTube video player"
@@ -272,7 +272,7 @@ function WatchVideo() {
               <div style={{ marginTop: "15px" }}>
                 <iframe
                   width="200"
-                  height="100"
+                  height="120"
                   src={el.videoSrc}
                   title="YouTube video player"
                 ></iframe>
