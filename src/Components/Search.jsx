@@ -1,3 +1,4 @@
+import {Link} from "react-router-dom"
 import React from "react";
 import "./Search.css";
 import TuneIcon from "@material-ui/icons/Tune";
@@ -27,7 +28,9 @@ function Search() {
       <hr />
       <h5>Latest from T-Series</h5>
       {videoData.map((el, i) => {
-        return <ChannelVideo key={i} {...el}/>
+        return  <Link key={i} to="/video">
+                  <ChannelVideo {...el} />
+              </Link>
       })
       }
     </div>

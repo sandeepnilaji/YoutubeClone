@@ -1,13 +1,13 @@
 .wacthvideo_container {
   display: grid;
-  grid-template-columns: 60% 30%;
-  gap: 2%;
+  grid-gap: 5%;
+  padding: 0% 5%;
+  grid-template-columns: 3fr 1.5fr;
   /* border: 1px solid black; */
 }
 
 .watchvideo_left {
   /* border: 1px solid black; */
-  margin-left: 100px;
   height: 700px;
 }
 .watchvideo_right {

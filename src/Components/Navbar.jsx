@@ -39,7 +39,7 @@ function Navbar(){
             <SearchIcon className="search-icon" />
           </Link>
           </div>
-          <Link to={`/`} style={{paddingLeft:"2%", color:"black"}}>
+          <Link to={`/`} style={{padding:"2%", color:"black"}}>
               <MicIcon />
           </Link>
         </div>
