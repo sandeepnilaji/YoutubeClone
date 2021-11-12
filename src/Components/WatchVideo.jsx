@@ -3,6 +3,8 @@ import "./WatchVideo.css";
 import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 import ThumbDownOffAltIcon from "@mui/icons-material/ThumbDownOffAlt";
 import AddRoadIcon from "@mui/icons-material/AddRoad";
+import { BsThreeDots } from "react-icons/bs";
+import { RiShareForwardLine } from "react-icons/ri";
 const data = [
   {
     id: 1,
@@ -219,11 +221,7 @@ function WatchVideo() {
                   </div>
                   <div>
                     <p>
-                      <img
-                        style={{ width: "25px", height: "20px" }}
-                        src="https://cdn-icons.flaticon.com/png/512/2958/premium/2958783.png?token=exp=1636456457~hmac=0e145b00f00f1980fa03c57ec1015832"
-                        alt="icons"
-                      />
+                      <RiShareForwardLine style={{ width: "25px", height: "20px" }} />
                     </p>
                   </div>
                   <div>
@@ -240,9 +238,7 @@ function WatchVideo() {
                   </div>
                   <div>
                     <p>
-                      <button style={{ border: "none", background: "none" }}>
-                        •••
-                      </button>
+                        <BsThreeDots style={{ border: "none", background: "none", marginTop:"5px" }} />
                     </p>
                   </div>
                 </div>
