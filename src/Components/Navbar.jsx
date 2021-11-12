@@ -1,4 +1,5 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
+import Avatar from '@mui/material/Avatar';
 import "./Navbar.css";
 import MenuIcon from "@material-ui/icons/Menu";
 import VideocamIcon from "@material-ui/icons/Videocam";
@@ -9,11 +10,26 @@ import SearchIcon from "@material-ui/icons/Search";
 import MicIcon from '@mui/icons-material/Mic';
 import { Link } from "react-router-dom";
 import {Context} from "../Context/Context";
+import { auth, signInWithGoogle } from "../firebase";
 
 
 function Navbar(){
     const [inputSearch, setInputSearch] = useState(""); 
-    const {hamburgerChange,handlecheckLogin} = useContext(Context);
+  const { hamburgerChange, handlecheckLogin } = useContext(Context);
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    auth.onAuthStateChanged(async (user) => {
+      console.log(user);
+      setUser(user);
+    })
+  }, [user])
+
+  const signOut = () => {
+    auth.signOut().then(() => {
+      setUser(null);
+      alert('You have been signed out')
+    })
+  }
 
     return(
         <div className="header">
@@ -48,7 +64,11 @@ function Navbar(){
           <VideocamIcon style={{ fontSize: 28 }} className="header-icon" />
           <AppsIcon style={{ fontSize: 28 }} className="header-icon" />
           <NotificationsIcon style={{ fontSize: 28 }} className="header-icon" />
-          <Button variant="outlined">Sign In</Button>
+          {
+            user === null ?
+            (<Button variant="outlined" onClick={signInWithGoogle}>Sign In</Button>):
+            (<Avatar src={user.photoURL} onClick={signOut} style={{cursor:"pointer"}}></Avatar>)
+          }
         </div>
       </div> 
     )

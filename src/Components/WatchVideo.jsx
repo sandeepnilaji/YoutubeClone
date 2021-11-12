@@ -169,12 +169,7 @@ function WatchVideo() {
       <div className="watchvideo_left">
         {data.map((e) => (
           <div key={e.id}>
-            <iframe
-              width="695"
-              height="450"
-              src={e.videoSrc}
-              title="YouTube video player"
-            ></iframe>
+            <iframe width="695" height="450" src={e.videoSrc} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <div>
               <p
                 style={{
@@ -271,8 +266,8 @@ function WatchVideo() {
             <div key={el.id} className="wactchVideo_right_similar">
               <div style={{ marginTop: "15px" }}>
                 <iframe
-                  width="200"
-                  height="100"
+                  width="180px"
+                  height="100px"
                   src={el.videoSrc}
                   title="YouTube video player"
                 ></iframe>
