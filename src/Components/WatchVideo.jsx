@@ -1,11 +1,11 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "./WatchVideo.css";
 import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 import ThumbDownOffAltIcon from "@mui/icons-material/ThumbDownOffAlt";
 import AddRoadIcon from "@mui/icons-material/AddRoad";
 import { BsThreeDots } from "react-icons/bs";
 import {RiShareForwardLine} from "react-icons/ri";
-import {useParams} from "react-router-dom"
+import { useParams } from "react-router-dom"
 
 const data = [
   {
@@ -165,135 +165,145 @@ const data1 = [
       "Cristiano Ronaldo: Best Ankle Breaker And Ridiculous Skills In Football Turn Notifications on and you will never miss a video again🔔",
   },
 ];
-const e = {
-  title: "test",
-  tags:"test"
-}
 
 function WatchVideo () {
+  const [data, setData] = useState([])
+  const { id } = useParams()
+  
+  console.log(id);
 
-  const{ id} = useParams()
+  const getVideos = async(req,res)=>{
+    const result = await fetch("http://localhost:8080/api/video");
+    const data = await result.json();
+    console.log(data.videos);
+    setData(data.videos);
+  }
 
+  useEffect(()=>{
+    getVideos();
+  }, [])
+  
+  const details = data.filter((el) => {
+    return el.videopath === id && el;
+  })
+  
+  console.log(details);
 
   return (
     <div className="wacthvideo_container">
-      {/* <div className="watchvideo_left"> */}
-           <div key={e.id}>
-    {//         <iframe
-    //           width="100%"
-    //           height="450"
-    //           src={e.videoSrc}
-    //           title="YouTube video player"
-    //         ></iframe>
-    //         <div>
-    //           <p
-    //             style={{
-    //               color: "rgb(54,164,255)",
-    //               marginBottom: "0px",
-    //               padding: "0px",
-    //             }}
-    //           >
-    //             #{e.tags}
-    //           </p>
-    //           <h4 style={{ marginBottom: "2px", margin: "0px", padding: "0" }}>
-    //             {e.title}
-    //           </h4>
-    //           <div className="watchVideo_likebtn">
-    //             <div>
-    //               <p style={{ color: "rgb(121,98,125)" }}>
-    //                 {e.views}Views•{e.date}
-    //               </p>
-    //             </div>
-    //             <div
-    //               style={{
-    //                 display: "flex",
-    //                 flexDirection: "row",
-    //                 gap: "8px",
-    //               }}
-    //             >
-    //               <div>
-    //                 <p style={{ padding: "0" }}>
-    //                   {" "}
-    //                   <ThumbUpOffAltIcon>filled</ThumbUpOffAltIcon>{" "}
-    //                 </p>
-    //               </div>
-    //               <div>
-    //                 <p>221k</p>
-    //               </div>
-    //               <div>
-    //                 <p style={{ padding: "0" }}>
-    //                   {" "}
-    //                   <ThumbDownOffAltIcon>filled</ThumbDownOffAltIcon>
-    //                 </p>
-    //               </div>
-    //               <div>
-    //                 <p>221k</p>
-    //               </div>
-    //               <div>
-    //                 <p>
-    //                   <RiShareForwardLine style={{ width: "25px", height: "20px" }} />
-    //                 </p>
-    //               </div>
-    //               <div>
-    //                 <p>SHARE</p>
-    //               </div>
-    //               <div>
-    //                 <p style={{ padding: "0" }}>
-    //                   {" "}
-    //                   <AddRoadIcon>filled</AddRoadIcon>
-    //                 </p>
-    //               </div>
-    //               <div>
-    //                 <p>SAVE</p>
-    //               </div>
-    //               <div>
-    //                 <p>
-    //                     <BsThreeDots style={{ border: "none", background: "none", marginTop:"5px" }} />
-    //                 </p>
-    //               </div>
-    //             </div>
-    //           </div>
-    //           <hr />
-    //           <div className="watchVideo_channel">
-    //             <div>
-    //               {" "}
-    //               <img
-    //                 src={e.channelPic}
-    //                 alt="channel"
-    //                 className="watchVideo_channelimg"
-    //               />
-    //             </div>
-    //             <div>
-    //               <p>{e.channelname}</p>
-    //               <p>{e.channelDiscription}</p>
-    //             </div>
-    //             <div className="watchVideo_subscribediv">
-    //               <button className="watchVideo_btn">SUBSCRIBE</button>
-    //             </div>
-              // </div>
-            // </div>
-            // </div>
-        }
-
-                <video  controls width="100%"  class="video-player">
+      <div className="watchvideo_left">
+           <div>
+             <video controls width="100%" style={{maxWidth:"100%"}} >
                 <source src={`http://localhost:8080/api/video/${id}`} />
                 </video>
-
+            <div>
+              <p
+                style={{
+                  color: "rgb(54,164,255)",
+                  marginBottom: "0px",
+                  padding: "0px",
+                }}
+              >
+                #NewSongs
+              </p>
+              <h4 style={{ marginBottom: "2px", margin: "0px", padding: "0" }}>
+              {/* {
+                details &&
+                (details[0].name)
+              } */}
+              {
+                details.map((el) => {
+                  return el.name
+                })
+              }
+              </h4>
+              <div className="watchVideo_likebtn">
+                <div>
+                  <p style={{ color: "rgb(121,98,125)" }}>
+                    1m+ Views• 10Jun
+                  </p>
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    gap: "8px",
+                  }}
+                >
+                  <div>
+                    <p style={{ padding: "0" }}>
+                      {" "}
+                      <ThumbUpOffAltIcon>filled</ThumbUpOffAltIcon>{" "}
+                    </p>
+                  </div>
+                  <div>
+                    <p>221k</p>
+                  </div>
+                  <div>
+                    <p style={{ padding: "0" }}>
+                      {" "}
+                      <ThumbDownOffAltIcon>filled</ThumbDownOffAltIcon>
+                    </p>
+                  </div>
+                  <div>
+                    <p>221k</p>
+                  </div>
+                  <div>
+                    <p>
+                      <RiShareForwardLine style={{ width: "25px", height: "20px" }} />
+                    </p>
+                  </div>
+                  <div>
+                    <p>SHARE</p>
+                  </div>
+                  <div>
+                    <p style={{ padding: "0" }}>
+                      {" "}
+                      <AddRoadIcon>filled</AddRoadIcon>
+                    </p>
+                  </div>
+                  <div>
+                    <p>SAVE</p>
+                  </div>
+                  <div>
+                    <p>
+                        <BsThreeDots style={{ border: "none", background: "none", marginTop:"5px" }} />
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr />
+              <div className="watchVideo_channel">
+                <div>
+                  {" "}
+                  <img
+                    src="https://yt3.ggpht.com/ytc/AKedOLSBoPARInTvGzb45qtZ2ki4mB_z_FtC3vez3Bdstg=s88-c-k-c0x00ffffff-no-rj"
+                    alt="channel"
+                    className="watchVideo_channelimg"
+                  />
+                </div>
+                <div>
+                  <p>Zee Music Company</p>
+                  <p>👉🏻 SUBSCRIBE to Zee Music Company - https://bit.ly/2yPcBkS </p>
+                </div>
+                <div className="watchVideo_subscribediv">
+                  <button className="watchVideo_btn">SUBSCRIBE</button>
+                </div>
+               </div>
+             </div>
+             </div>
       </div>
       <div className="watchvideo_right">
         <div>
-          {data1.map((el) => (
-            <div key={el.id} className="wactchVideo_right_similar">
-              <div style={{ marginTop: "15px" }}>
-                <iframe
-                  width="200"
-                  height="120"
-                  src={el.videoSrc}
-                  title="YouTube video player"
-                ></iframe>
+          {data.map((el, i) => (
+            <div style={{ marginTop:"10px"}} key={i} className="wactchVideo_right_similar">
+              <div>
+                <video width="200" height="120" style={{maxWidth:"200px"}} >
+                <source src={`http://localhost:8080/api/video/${el.videopath}`} />
+                </video>
               </div>
               <div>
-                <p style={{ marginBottom: "8px", padding: "0" }}>{el.title}</p>
+                <p style={{ marginBottom: "8px", padding: "0" }}>{el.name}</p>
                 <p
                   style={{
                     margin: "0",
@@ -301,7 +311,7 @@ function WatchVideo () {
                     color: "rgb(148,148,148)",
                   }}
                 >
-                  {el.channelname}
+                  T-Series
                 </p>
                 <p
                   style={{
@@ -310,11 +320,71 @@ function WatchVideo () {
                     color: "rgb(148,148,148)",
                   }}
                 >
-                  {el.views}Views {el.date}{" "}
+                  1M+ Views 10 Jun
                 </p>
               </div>
             </div>
           ))}
+          {data.map((el, i) => (
+            <div style={{ marginTop:"10px"}} key={el._id}className="wactchVideo_right_similar">
+              <div>
+                <video width="200" height="120" style={{maxWidth:"200px"}} >
+                <source src={`http://localhost:8080/api/video/${el.videopath}`} />
+                </video>
+              </div>
+              <div>
+                <p style={{ marginBottom: "8px", padding: "0" }}>{el.name}</p>
+                <p
+                  style={{
+                    margin: "0",
+                    padding: "0",
+                    color: "rgb(148,148,148)",
+                  }}
+                >
+                  T-Series
+                </p>
+                <p
+                  style={{
+                    margin: "0",
+                    padding: "0",
+                    color: "rgb(148,148,148)",
+                  }}
+                >
+                  1M+ Views 10 Jun
+                </p>
+              </div>
+            </div>
+          ))}
+          {data.map((el, i) => (
+            <div style={{ marginTop:"10px"}} key={i} className="wactchVideo_right_similar">
+              <div>
+                <video width="200" height="120" style={{maxWidth:"200px"}} >
+                <source src={`http://localhost:8080/api/video/${el.videopath}`} />
+                </video>
+              </div>
+              <div>
+                <p style={{ marginBottom: "8px", padding: "0" }}>{el.name}</p>
+                <p
+                  style={{
+                    margin: "0",
+                    padding: "0",
+                    color: "rgb(148,148,148)",
+                  }}
+                >
+                  T-Series
+                </p>
+                <p
+                  style={{
+                    margin: "0",
+                    padding: "0",
+                    color: "rgb(148,148,148)",
+                  }}
+                >
+                  1M+ Views 10 Jun
+                </p>
+              </div>
+            </div>
+          ))} 
         </div>
       </div>
     </div>
