@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# youTube clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hello there, you might have seen the youTube Website, where you can watch all type of video. Like entertement,sportes,news and many more. In youTube you also can create your acoount and chennal and become a creater of your interest. And upload video here.
 
-## Available Scripts
+Moving ahead, In a team we member of 5 people study at Masai School developed a clone of the website of youTube in just 7 days as a part of our curriculum. This file is all about our journey and the challenges we faced while building the project.
 
-In the project directory, you can run:
+# Technology Stack Used
+In this project we have used the following tech stack:
+* React
+* JavaScript
+* node.js
+* Express
+* MongoDB
+* CSS
+* fireBase
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# #Libraries Used 🌟
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+All the image and icon links have been taken from the main website ( https://www.youTube.com/ )
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+# # End Notes 📑
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+In this project we were tried to achieve a near to perfect clone of the original website as much as possible with the help of all the new Tech stack like React and node.
+This entire journey of making the project was awesome. We learned lots of things by applying to the real website and it gave us a lot of confidence. Although we could have done more, time did not allow us to go further. But we must improve it.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# # # Limitations:
 
-### `yarn eject`
+Not responsive yet and might not be properly visible on small screen devices (Recomended Resolution: 1496 x 768 )
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# # Team Members and Contributors 😇 :
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+👤 Nikhil Gupta
+* Github:https://github.com/NikhilGuptan
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+👤 Rinku Bangale
+* Github: https://github.com/rinkubangale
 
-## Learn More
+👤 Sandeep Nilaji
+* Github: https://github.com/sandeepnilaji
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+👤 Aarif 
+* Github:https://github.com/0x7EVEN
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+👤 Nagendra Singh
+* Github:https://github.com/nagendrax02
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
