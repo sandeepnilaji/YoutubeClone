@@ -5,6 +5,17 @@ import {Context} from "../Context/Context";
 import { Link } from "react-router-dom";
 import data from "../data.json"
 
+const thumbs = [
+  "https://www.ilyricshub.com/wp-content/uploads/2020/09/tu-aake-dekhle-king-300x169.jpg",
+  "https://punjabilyrics.in/wp-content/uploads/2021/02/0-2-6.jpg",
+  "https://i.pinimg.com/564x/0c/11/ed/0c11ed375827c4f2ed51c259c912393b.jpg",
+  "https://www.hinditracks.in/wp-content/uploads/2017/07/nazm-nazm.jpg",
+  "https://www.moviesavailableon.com/images/movies/khatta_meetha_h.jpg",
+  "https://c1.wallpaperflare.com/preview/993/374/570/technology-developer-touch-finger.jpg",
+  "https://cdn1.dotesports.com/wp-content/uploads/2020/12/18110404/VAL-Agent-14-2048x1152.jpg",
+  "https://c1.wallpaperflare.com/preview/595/1003/783/code-coder-coding-computer.jpg",
+  "https://i.stack.imgur.com/ac0r7.png",
+]
 
 
 function RecommendedVideos(){
@@ -19,8 +30,9 @@ function RecommendedVideos(){
     getVideos();
   },[])
   if(videos){
-    return <div className="max-3"> {videos.map(el=>{
-      console.log('className:', el.views)
+    return <div className="max-3"> {videos.map((el,i)=>{
+      console.log('className:', el);
+      // console.log("channel",  el)
       return (
     //     <video controls autoplay width="300" class="video-player">
     //     <source src={`http://localhost:8080/api/video/${el.videopath}`}/>
@@ -31,20 +43,20 @@ function RecommendedVideos(){
 
         <div className="recommendedVideo">
             <Link to={`/video/${el.videopath}`}>
-    <VideoCard
+        <VideoCard
             title={el.name}
             views={el.views}
             videoUrl={el.videopath}
             timestamp="10 days ago"
-            image="https://i.ytimg.com/vi/tOXMlseYc7E/maxresdefault.jpg"
+            image={thumbs[i%thumbs.length]}
             channelImage="https://yt3.ggpht.com/a/AATXAJyAtaR5kNZ5b7-4ytyB2NOnmPYRO9IXqHHxOBRH=s900-c-k-c0x00ffffff-no-rj"
-            channel="Indie Music Label"
+            channel={el.channel}
           />
           </Link>
           </div>
         </div>
       )})}
-       {videos.map(el=>{
+       {videos.map((el,i)=>{
       return (
     //     <video controls autoplay width="300" class="video-player">
     //     <source src={`http://localhost:8080/api/video/${el.videopath}`}/>
@@ -54,21 +66,21 @@ function RecommendedVideos(){
 
         <div className="recommendedVideo">
           <Link to={`/video/${el.videopath}`}>
-          <VideoCard
+        <VideoCard
             title={el.name}
             views={el.views}
             videoUrl={el.videopath}
             timestamp="10 days ago"
-            image="https://i.ytimg.com/vi/tOXMlseYc7E/maxresdefault.jpg"
+            image={thumbs[i%thumbs.length]}
             channelImage="https://yt3.ggpht.com/a/AATXAJyAtaR5kNZ5b7-4ytyB2NOnmPYRO9IXqHHxOBRH=s900-c-k-c0x00ffffff-no-rj"
-            channel="Indie Music Label"
+            channel={el.channel}
           />
           </Link>
           </div>
         </div>
          );
        })}
-     {videos.map(el=>{
+     {videos.map((el,i)=>{
       return (
     //     <video controls autoplay width="300" class="video-player">
     //     <source src={`http://localhost:8080/api/video/${el.videopath}`}/>
@@ -79,14 +91,14 @@ function RecommendedVideos(){
 
         <div className="recommendedVideo">
           <Link to="/video">
-    <VideoCard
+        <VideoCard
             title={el.name}
             views={el.views}
             videoUrl={el.videopath}
             timestamp="10 days ago"
-            image="https://i.ytimg.com/vi/tOXMlseYc7E/maxresdefault.jpg"
+            image={thumbs[i%thumbs.length]}
             channelImage="https://yt3.ggpht.com/a/AATXAJyAtaR5kNZ5b7-4ytyB2NOnmPYRO9IXqHHxOBRH=s900-c-k-c0x00ffffff-no-rj"
-            channel="Indie Music Label"
+            channel={el.channel}
           />
           </Link>
           </div>

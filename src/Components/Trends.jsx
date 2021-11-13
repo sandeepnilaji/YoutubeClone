@@ -29,7 +29,7 @@ function Trending () {
           <div className="col-2"> <Avatar className="channelRow_logo" src={"https://www.youtube.com/img/trending/avatar/trending_avatar.png"} alt="" />
           </div>
           <div className="col-8 align-middle pt-4"><h2 className="m- text-left mt-3 p-0">
-               {"Trending Page"}
+               {"Trending Videos"}
           </h2>
           </div>
           </div>
@@ -40,7 +40,7 @@ function Trending () {
             {videos ? videos.map((el, i) => {
                  console.log(el)
                  return <Link key={i} to="/video">
-                      <ChannelVideo {...el} videoUrl={el.videopath} />
+                      <ChannelVideo {...el} videoUrl={el.videopath} i={i} />
                  </Link>;
             }):"Loading"}
     </div>

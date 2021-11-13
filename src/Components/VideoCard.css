@@ -3,12 +3,15 @@
 }
 video{
     width: 100% !important;
-    max-width: 460px;
-    height: auto !important;
+    max-width: 460px !important;
+    max-height: 300px !important;
+    height: 280px !important;
+    object-fit: cover;
 }
-.div{
+
+/* .div{ */
     /* border: 1px solid red; */
-}
+/* } */
 .videoCard-image{
     height: 100%;
     /* width: 275px; */
