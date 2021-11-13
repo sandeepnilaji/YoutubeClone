@@ -22,7 +22,7 @@ function VideoCard({image, title, channel, views, timestamp, channelImage, video
                     <div><h4>{title}</h4>
                     <p className="m-0 p-0">{channel}testestse</p>
                     <p className="m-0 p-0">
-                    {views} · {timestamp}
+                            {"0 views"} <span className="dot">{" "}·{" "}</span> {timestamp}
                     </p></div>
                 </div>
             </div>
