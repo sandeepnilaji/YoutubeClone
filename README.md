@@ -27,15 +27,15 @@ All the image and icon links have been taken from the main website ( https://www
 
 2. Home After Login:
 
-2> ![Home After Login](https://drive.google.com/file/d/1nYwBSgQilMK65NXKZwpbV4yOfWGjT-Yc/view?usp=sharing)
+2> ![Home After Login](https://cdn.hashnode.com/res/hashnode/image/upload/v1636781999685/Qy3-704bY.png?auto=compress,format&format=webp)
 
 3. video Page :
 
-![video](https://drive.google.com/file/d/1Nd6bn6QvasRhoiMJQD1yVOK4m2mjDjoR/view?usp=sharing)
+![video](https://cdn.hashnode.com/res/hashnode/image/upload/v1636782032269/OB8sh1qet.png?auto=compress,format&format=webp)
 
 4. Search Page:
 
-![Search](https://drive.google.com/file/d/10hIZhIBKyVzdlyvdnoTefzsRhtBGhe_q/view?usp=sharing)
+![Search](https://cdn.hashnode.com/res/hashnode/image/upload/v1636782062271/VnjlwvsBQ.png?auto=compress,format&format=webp)
 
 
 
