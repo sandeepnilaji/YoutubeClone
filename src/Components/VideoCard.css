@@ -7,13 +7,28 @@ video{
     height: auto !important;
 }
 .div{
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 .videoCard-image{
     height: 100%;
     /* width: 275px; */
 }
-
+a{
+    color: inherit;
+    text-decoration: none;
+}
+.dot {
+  /* height: 2px;
+  width:2px; */
+  font-size: 12px;
+  /* background-color: #000; */
+  border-radius: 50%;
+  display: inline-block;
+}
+.videoCard-avatar{
+    margin-left: 5%;
+    margin-top: 1%;
+}
 .videoCard-info {
     display: flex;
     margin-top: 10px;
@@ -21,7 +36,7 @@ video{
 }
 
 .video-text{
-    margin-left: 10px;
+    margin-left: 30px;
 }
 
 .video-text h4{
@@ -38,11 +53,11 @@ video{
 
 @media screen and (max-width: 600px) {
     .videoCard {
-        /* width: 250px; */
+        width: 250px;
         margin-bottom: 20px;
     }
     .videoCard-image{
-        /* height: 130px; */
-        /* width: 245px; */
+        height: 130px;
+        width: 245px;
     }
 }

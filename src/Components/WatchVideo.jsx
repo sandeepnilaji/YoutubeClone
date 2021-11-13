@@ -4,7 +4,9 @@ import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 import ThumbDownOffAltIcon from "@mui/icons-material/ThumbDownOffAlt";
 import AddRoadIcon from "@mui/icons-material/AddRoad";
 import { BsThreeDots } from "react-icons/bs";
-import { RiShareForwardLine } from "react-icons/ri";
+import {RiShareForwardLine} from "react-icons/ri";
+import {useParams} from "react-router-dom"
+
 const data = [
   {
     id: 1,
@@ -163,107 +165,120 @@ const data1 = [
       "Cristiano Ronaldo: Best Ankle Breaker And Ridiculous Skills In Football Turn Notifications on and you will never miss a video again🔔",
   },
 ];
-function WatchVideo() {
+const e = {
+  title: "test",
+  tags:"test"
+}
+
+function WatchVideo () {
+
+  const{ id} = useParams()
+
+
   return (
     <div className="wacthvideo_container">
-      <div className="watchvideo_left">
-        {data.map((e) => (
-          <div key={e.id}>
-            <iframe
-              width="100%"
-              height="450"
-              src={e.videoSrc}
-              title="YouTube video player"
-            ></iframe>
-            <div>
-              <p
-                style={{
-                  color: "rgb(54,164,255)",
-                  marginBottom: "0px",
-                  padding: "0px",
-                }}
-              >
-                #{e.tags}
-              </p>
-              <h4 style={{ marginBottom: "2px", margin: "0px", padding: "0" }}>
-                {e.title}
-              </h4>
-              <div className="watchVideo_likebtn">
-                <div>
-                  <p style={{ color: "rgb(121,98,125)" }}>
-                    {e.views}Views•{e.date}
-                  </p>
-                </div>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    gap: "8px",
-                  }}
-                >
-                  <div>
-                    <p style={{ padding: "0" }}>
-                      {" "}
-                      <ThumbUpOffAltIcon>filled</ThumbUpOffAltIcon>{" "}
-                    </p>
-                  </div>
-                  <div>
-                    <p>221k</p>
-                  </div>
-                  <div>
-                    <p style={{ padding: "0" }}>
-                      {" "}
-                      <ThumbDownOffAltIcon>filled</ThumbDownOffAltIcon>
-                    </p>
-                  </div>
-                  <div>
-                    <p>221k</p>
-                  </div>
-                  <div>
-                    <p>
-                      <RiShareForwardLine style={{ width: "25px", height: "20px" }} />
-                    </p>
-                  </div>
-                  <div>
-                    <p>SHARE</p>
-                  </div>
-                  <div>
-                    <p style={{ padding: "0" }}>
-                      {" "}
-                      <AddRoadIcon>filled</AddRoadIcon>
-                    </p>
-                  </div>
-                  <div>
-                    <p>SAVE</p>
-                  </div>
-                  <div>
-                    <p>
-                        <BsThreeDots style={{ border: "none", background: "none", marginTop:"5px" }} />
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <hr />
-              <div className="watchVideo_channel">
-                <div>
-                  {" "}
-                  <img
-                    src={e.channelPic}
-                    alt="channel"
-                    className="watchVideo_channelimg"
-                  />
-                </div>
-                <div>
-                  <p>{e.channelname}</p>
-                  <p>{e.channelDiscription}</p>
-                </div>
-                <div className="watchVideo_subscribediv">
-                  <button className="watchVideo_btn">SUBSCRIBE</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
+      {/* <div className="watchvideo_left"> */}
+           <div key={e.id}>
+    {//         <iframe
+    //           width="100%"
+    //           height="450"
+    //           src={e.videoSrc}
+    //           title="YouTube video player"
+    //         ></iframe>
+    //         <div>
+    //           <p
+    //             style={{
+    //               color: "rgb(54,164,255)",
+    //               marginBottom: "0px",
+    //               padding: "0px",
+    //             }}
+    //           >
+    //             #{e.tags}
+    //           </p>
+    //           <h4 style={{ marginBottom: "2px", margin: "0px", padding: "0" }}>
+    //             {e.title}
+    //           </h4>
+    //           <div className="watchVideo_likebtn">
+    //             <div>
+    //               <p style={{ color: "rgb(121,98,125)" }}>
+    //                 {e.views}Views•{e.date}
+    //               </p>
+    //             </div>
+    //             <div
+    //               style={{
+    //                 display: "flex",
+    //                 flexDirection: "row",
+    //                 gap: "8px",
+    //               }}
+    //             >
+    //               <div>
+    //                 <p style={{ padding: "0" }}>
+    //                   {" "}
+    //                   <ThumbUpOffAltIcon>filled</ThumbUpOffAltIcon>{" "}
+    //                 </p>
+    //               </div>
+    //               <div>
+    //                 <p>221k</p>
+    //               </div>
+    //               <div>
+    //                 <p style={{ padding: "0" }}>
+    //                   {" "}
+    //                   <ThumbDownOffAltIcon>filled</ThumbDownOffAltIcon>
+    //                 </p>
+    //               </div>
+    //               <div>
+    //                 <p>221k</p>
+    //               </div>
+    //               <div>
+    //                 <p>
+    //                   <RiShareForwardLine style={{ width: "25px", height: "20px" }} />
+    //                 </p>
+    //               </div>
+    //               <div>
+    //                 <p>SHARE</p>
+    //               </div>
+    //               <div>
+    //                 <p style={{ padding: "0" }}>
+    //                   {" "}
+    //                   <AddRoadIcon>filled</AddRoadIcon>
+    //                 </p>
+    //               </div>
+    //               <div>
+    //                 <p>SAVE</p>
+    //               </div>
+    //               <div>
+    //                 <p>
+    //                     <BsThreeDots style={{ border: "none", background: "none", marginTop:"5px" }} />
+    //                 </p>
+    //               </div>
+    //             </div>
+    //           </div>
+    //           <hr />
+    //           <div className="watchVideo_channel">
+    //             <div>
+    //               {" "}
+    //               <img
+    //                 src={e.channelPic}
+    //                 alt="channel"
+    //                 className="watchVideo_channelimg"
+    //               />
+    //             </div>
+    //             <div>
+    //               <p>{e.channelname}</p>
+    //               <p>{e.channelDiscription}</p>
+    //             </div>
+    //             <div className="watchVideo_subscribediv">
+    //               <button className="watchVideo_btn">SUBSCRIBE</button>
+    //             </div>
+              // </div>
+            // </div>
+            // </div>
+        }
+
+                <video  controls width="100%"  class="video-player">
+                <source src={`http://localhost:8080/api/video/${id}`} />
+                </video>
+
       </div>
       <div className="watchvideo_right">
         <div>

@@ -17,17 +17,17 @@ import FlagIcon from '@material-ui/icons/Flag';
 import HelpIcon from '@material-ui/icons/Help';
 import FeedbackIcon from '@material-ui/icons/Feedback';
 import {Context} from "../Context/Context";
-
+import {Link} from "react-router-dom"
 
 function Sidebar() {
 
     const {hamburgerChange,handlecheckLogin} = useContext(Context);
-    
+
 
     return (
         <div className={hamburgerChange ? "sidebarBlock":"sidebar"}>
-            <SidebarRow selected Icon={HomeIcon} title="Home" />
-            <SidebarRow Icon={WhatshotIcon} title="Trending" />
+            <Link to="/"><SidebarRow selected Icon={HomeIcon} title="Home" /></Link>
+            <Link to="/trending"><SidebarRow Icon={WhatshotIcon} title="Trending" /></Link>
             <SidebarRow Icon={SubscriptionsSharpIcon} title="Subscription" />
             <hr />
             <SidebarRow Icon={VideoLibraryIcon} title="Library" />
@@ -35,13 +35,13 @@ function Sidebar() {
             <SidebarRow Icon={OndemandVideoIcon} title="Your Videos" />
             <SidebarRow Icon={WatchLaterIcon} title="Watch Later" />
             <SidebarRow Icon={ThumbUpAltOutlinedIcon} title="Liked Videos" />
-            <SidebarRow Icon={ExpandMoreOutlinedIcon} title="Show more" /> 
-            <hr />    
-            <SidebarRow Icon={SettingsIcon} title="Settings" /> 
-            <SidebarRow Icon={FlagIcon} title="Report History" /> 
-            <SidebarRow Icon={HelpIcon} title="Help" /> 
-            <SidebarRow Icon={FeedbackIcon} title="Send Feedback" /> 
-            <hr />         
+            <SidebarRow Icon={ExpandMoreOutlinedIcon} title="Show more" />
+            <hr />
+            <SidebarRow Icon={SettingsIcon} title="Settings" />
+            <SidebarRow Icon={FlagIcon} title="Report History" />
+            <SidebarRow Icon={HelpIcon} title="Help" />
+            <SidebarRow Icon={FeedbackIcon} title="Send Feedback" />
+            <hr />
 
         </div>
     )
