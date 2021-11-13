@@ -2,26 +2,36 @@ import { Avatar, Button } from "@material-ui/core";
 import React from "react";
 import "./ChannelVideo.css";
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
-
-function ChannelVideo({ image, title, description, views, timestamp }) {
+import {Link} from "react-router-dom"
+function ChannelVideo({ name, description, videoUrl }) {
   return (
+    <Link to={`/video/${videoUrl}`}>
     <div className="ChannelVideo">
-      <img src={image} className="video_image" />
+      {/* <img src={"https://via.placeholder.com/450x250"} className="video_image" /> */}
+      <video controls width="100%" autoplay class="video-player">
+        <source src={`http://localhost:8080/api/video/${videoUrl}`} />
+      </video>
       <div className="channelVideo_text">
-        <h4>{title}</h4>
+        <h2 className="light-text">{name}</h2>
+          <div className="p-3"></div>
+          <div className="row m-0 p-0">
+            <div className="col-1">
+            <Avatar src={"https://via.placeholder.com/50x50"}/>
+            </div>
+            <div className="col-5 align-middle">
+            <h6 className="align-middle pt-2">{"random name here"}</h6>
+            </div>
+          </div>
+          <div className="p-2"></div>
         <h5>
-          {views} views · {timestamp}
+          {"0"} views · 1 day ago
         </h5>
-        <div className="video_logo">
-          <Avatar src="https://yt3.ggpht.com/a/AATXAJyZBQmbGZE0RH4Rzh0my2iSArzhfVgUXY5iU8c1NYA=s900-c-k-c0x00ffffff-no-rj" className="videoRow_logo" />
-          <h6>T-Series</h6>
-          <CheckCircleIcon className="checkIcon" />
-        </div>
-
+        <div className="video_logo"></div>
         <p>{description}</p>
         <Button variant="contained" className="new">New</Button>
       </div>
-    </div>
+      </div>
+    </Link>
   );
 }
 
