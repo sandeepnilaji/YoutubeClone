@@ -19,6 +19,24 @@ In this project we have used the following tech stack:
 
 All the image and icon links have been taken from the main website ( https://www.youTube.com/ )
 
+# # Snapshots 📷
+
+1. Landing Page ( Home Page):
+
+![1 Home youTube](https://drive.google.com/file/d/1YEd0drH02fpuDlSSarMRSMQe4Miulr9l/view?usp=sharing)
+
+2. Home After Login:
+
+2> ![Home After Login](https://drive.google.com/file/d/1nYwBSgQilMK65NXKZwpbV4yOfWGjT-Yc/view?usp=sharing)
+
+3. video Page :
+
+![video](https://drive.google.com/file/d/1Nd6bn6QvasRhoiMJQD1yVOK4m2mjDjoR/view?usp=sharing)
+
+4. Search Page:
+
+![Search](https://drive.google.com/file/d/10hIZhIBKyVzdlyvdnoTefzsRhtBGhe_q/view?usp=sharing)
+
 
 
 # # End Notes 📑
