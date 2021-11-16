@@ -1,7 +1,7 @@
 .videoCard {
     width: auto;
 }
-video{
+.video-card{
     width: 100% !important;
     max-width: 460px !important;
     max-height: 300px !important;

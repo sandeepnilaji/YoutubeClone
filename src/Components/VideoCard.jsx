@@ -2,16 +2,15 @@ import { Avatar } from '@material-ui/core';
 import React from 'react';
 import "./VideoCard.css";
 
-function VideoCard({image, title, channel, views, timestamp, channelImage, videoUrl}) {
+function VideoCard({image, title, channel,views, timestamp, channelImage, videoUrl}) {
     console.log('title----->', channel);
     console.log('videoUrl--->', videoUrl)
     return (
         <div className="videoCard">
             {/* <img src={image} alt="" className="videoCard-image" /> */}
-                <video controls class="video-player" poster={image}>
+                <video controls class="video-player" poster={image} className="video-card">
                 <source src={`http://localhost:8080/api/video/${videoUrl}`} />
                 </video>
-
             <div className="videoCard-info p-0">
                 <Avatar
                     className="videoCard-avatar"

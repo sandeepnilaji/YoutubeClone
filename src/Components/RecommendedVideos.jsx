@@ -9,7 +9,6 @@ const thumbs = [
   "https://www.ilyricshub.com/wp-content/uploads/2020/09/tu-aake-dekhle-king-300x169.jpg",
   "https://punjabilyrics.in/wp-content/uploads/2021/02/0-2-6.jpg",
   "https://i.pinimg.com/564x/0c/11/ed/0c11ed375827c4f2ed51c259c912393b.jpg",
-  "https://www.hinditracks.in/wp-content/uploads/2017/07/nazm-nazm.jpg",
   "https://www.moviesavailableon.com/images/movies/khatta_meetha_h.jpg",
   "https://c1.wallpaperflare.com/preview/993/374/570/technology-developer-touch-finger.jpg",
   "https://cdn1.dotesports.com/wp-content/uploads/2020/12/18110404/VAL-Agent-14-2048x1152.jpg",
@@ -48,8 +47,8 @@ function RecommendedVideos(){
             views={el.views}
             videoUrl={el.videopath}
             timestamp="10 days ago"
-            image={thumbs[i%thumbs.length]}
-            channelImage="https://yt3.ggpht.com/a/AATXAJyAtaR5kNZ5b7-4ytyB2NOnmPYRO9IXqHHxOBRH=s900-c-k-c0x00ffffff-no-rj"
+            image={el.thumbnail}
+            channelImage={el.channelIcon}
             channel={el.channel}
           />
           </Link>
